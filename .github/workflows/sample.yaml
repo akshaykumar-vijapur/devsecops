@@ -1,0 +1,43 @@
+name: ci-pipeline
+on:
+   workflow_dispatch:
+
+jobs:
+  ci-start:
+    runs-on: ubuntu-latest
+    steps:
+      - name:  code-ci-start
+        run: echo "code ci start"
+  
+  code-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: start
+        run: echo "starting checks"
+      - name: detect-secrets
+        run: echo "running detect secrets"
+      
+  code-deploy:
+    runs-on: ubuntu-latest
+    steps:
+        - name: code-build
+          run: echo "code build"
+
+        - name: code-sign
+          run: echo "code sign"
+
+  deploy-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy-release
+        run: echo "deploy release"
+    
+  ci-finish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ci-finish
+        run: echo "ci finish"
+
+
+
+
